@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+   height: 100%;
+  }
+
+  .homecontainer{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    /* background-color: rgb(139, 180, 180); */
+    flex-direction: column; 
+    background-size: cover;
+  }
+
+  .top-container {
+    width: 100%;
+    padding: 20px;
+    flex: 0; 
+    color: #221347;
+    border-bottom: 1px solid rgb(63, 47, 245);
+  } 
+  
+  .bottom-container {
+    width: 100%;
+    padding: 20px;
+    /* height: 97%; */
+    color: #221347;
+    flex: 1; 
+    flex-direction: row; 
+  }

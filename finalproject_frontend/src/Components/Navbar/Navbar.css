@@ -1,0 +1,47 @@
+.navbar {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background: rgb(2, 2, 112);
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  
+  .navbar-logo a {
+    font-size: 30px;
+    text-decoration: none;
+    color: rgb(243, 245, 246);
+    font-family: 'Wavefont', cursive;
+  }
+  
+  .navbar-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+  }
+  .navbar-list-right{
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+    font-size: 20px;
+    margin: 0px 0px 0px 600px;
+  }
+  
+  .navbar-item a {
+    color: rgb(238, 243, 247);
+    text-decoration: none;
+  }
+  .logout{
+    color: rgb(238, 243, 247);
+    text-decoration: none;
+    background-color: transparent !important;
+    font-size: 20px;
+  }
+  
+  .navbar-item a:hover {
+    text-decoration: rgb(104, 239, 37);
+  }
+  
