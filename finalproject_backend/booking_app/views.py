@@ -74,7 +74,8 @@ class SigninView(APIView):
                 'user_id': user.id,
                 'refresh_token': str(refresh),
                 'access_token': str(access_token),
-                'username':user.username
+                'username':user.username,
+                'is_admin':user.is_admin
             })
 
         return JsonResponse({'message': 'Incorrect credentials'}, status=status.HTTP_401_UNAUTHORIZED)

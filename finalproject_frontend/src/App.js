@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Login from "./Components/Login/Login";
 import Signup from "./Components/Signup/Signup";
@@ -10,11 +10,14 @@ import SeatBooking from "./Components/SeatBooking/SeatBooking";
 import ForgotPassword from "./Components/Forgotpassword/Forgotpassword";
 import Ticket from "./Components/Ticket/Ticket";
 import UserProfile from "./Components/UserProfile/UserProfile";
+import Movieform from "./Components/Movieform/Movieform";
+import Adminmoviepage from "./Components/Adminmoviepage/Adminmoviepage";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
     localStorage.getItem("accessToken") ? true : false
   );
+  const [isAdmin, setIsAdmin] = useState(localStorage.getItem("isAdmin") === "true");
 
   const handleLogout = async () => {
     try {
@@ -30,7 +33,9 @@ function App() {
 
         if (response.ok) {
           localStorage.removeItem("accessToken");
+          localStorage.removeItem("isAdmin");
           setIsAuthenticated(false);
+          setIsAdmin(false);
           window.location.href = "/login";
         } else {
           console.error("Logout failed");
@@ -41,8 +46,14 @@ function App() {
     }
   };
 
-  const handleLogin = () => {
+  const handleLogin = (isAdmin) => {
     setIsAuthenticated(true);
+    setIsAdmin(isAdmin);
+  };
+
+  // Protected route for admin
+  const AdminRoute = ({ element }) => {
+    return isAdmin ? element : <Navigate to="/" />;
   };
 
   return (
@@ -58,6 +69,11 @@ function App() {
           <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route path="/ticket/:id/" element={<Ticket />} />
           <Route path="/userprofile" element={<UserProfile />} />
+          <Route path="/movieform" element={<Movieform />} />
+          <Route
+            path="/adminmoviepage"
+            element={<AdminRoute element={<Adminmoviepage />} />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

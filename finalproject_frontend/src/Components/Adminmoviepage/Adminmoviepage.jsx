@@ -1,7 +1,7 @@
 // AdminMoviesPage.jsx
 
 import React, { useState, useEffect } from "react";
-import MovieForm from "./MovieForm";
+import Movieform from "../Movieform/Movieform";
 import Movies from "../Movies/Movies";
 
 const AdminMoviesPage = () => {
@@ -91,7 +91,7 @@ const AdminMoviesPage = () => {
   return (
     <div>
       <h2>Admin Movies Page</h2>
-      <MovieForm
+      <Movieform
         onSubmit={selectedMovie ? handleUpdateMovie : handleAddMovie}
         initialData={selectedMovie}
       />

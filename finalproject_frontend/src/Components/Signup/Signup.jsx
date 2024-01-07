@@ -13,6 +13,7 @@ function Signup() {
     email: "",
     password: "",
     username: "",
+    is_staff: false,
   };
   const submitForm = (values, props) => {
     console.log(values);
@@ -49,6 +50,7 @@ function Signup() {
       .required("Password is required")
       .min(6, "Password is too short - should be 6 chars minimum"),
     username: Yup.string().required("username is required"),
+    is_staff: Yup.boolean(),
   });
 
   return (
@@ -135,9 +137,10 @@ function Signup() {
                     />
                   </div>
                   <div className="check-box">
-                  <Field type="checkbox" name="is_staff" />
-                    <label htmlFor="is_staff">Are you a staff ?</label>
+                    <Field type="checkbox" name="is_staff" id="is_staff" />
+                    <label htmlFor="is_staff">Are you a staff?</label>
                   </div>
+
                   <div>
                     <p className="text">
                       Already have an account?

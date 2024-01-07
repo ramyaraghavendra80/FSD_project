@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
+
 function Login({ onLogin }) {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
@@ -36,13 +37,20 @@ function Login({ onLogin }) {
         const data = await response.json();
         const accessToken = data.access_token;
         const username = data.username;
+        const isAdmin = data.is_admin; // Assuming your API returns whether the user is an admin
 
         localStorage.setItem("accessToken", accessToken);
         localStorage.setItem("username", username);
 
         // Trigger the parent component's login function
         onLogin();
-        navigate("/");
+
+        // Redirect to adminmoviepage if the user is an admin
+        if (isAdmin) {
+          navigate("/adminmoviepage");
+        } else {
+          navigate("/");
+        }
       } else {
         setError("Login failed. Please check your credentials.");
       }
