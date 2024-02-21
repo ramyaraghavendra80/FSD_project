@@ -2,10 +2,17 @@ import React, { useState } from "react";
 import "./Moviefilter.css";
 
 const MovieFilter = ({ setMovies }) => {
-  const genres = ["Action", "Comedy", "Drama", "Horror", "Science Fiction"];
-  const languages = ["English", "Spanish", "German", "French", "Japanese"];
-  const locations = ["New York","Los Angeles","Chicago","San Francisco","Miami"];
-  const ratings = ["G", "PG", "PG-13", "R"];
+  const genres = [
+    "Action",
+    "Comedy",
+    "Drama",
+    "Horror",
+    "Romantic",
+    "Family Drama",
+  ];
+  const languages = ["English", "Kannada", "Hindi", "Tamil"];
+  const locations = ["Yalahanka", "Bagalur", "KRpuram"];
+  const ratings = ["1", "2", "3", "4", "5"];
 
   const [selectedGenre, setSelectedGenre] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState("");
@@ -16,10 +23,13 @@ const MovieFilter = ({ setMovies }) => {
   const handleFilterMovies = () => {
     // Fetch movies based on selected filters
     fetch(
-      `http://127.0.0.1:8000/project/movies/?genre=${selectedGenre}&language=${selectedLanguage}&location=${selectedLocation}&rating=${selectedRating}`, {
+      `http://127.0.0.1:8000/project/movies/?genre=${selectedGenre}&language=${selectedLanguage}&location=${selectedLocation}&rating=${selectedRating}`,
+      {
         headers: {
           Authorization: `Bearer ${accessToken}`,
-        },} )
+        },
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         setMovies(data);

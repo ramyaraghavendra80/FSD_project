@@ -38,9 +38,12 @@ function Login({ onLogin }) {
         const accessToken = data.access_token;
         const username = data.username;
         const isAdmin = data.is_admin; // Assuming your API returns whether the user is an admin
+        const user_id = data.user_id;
 
         localStorage.setItem("accessToken", accessToken);
         localStorage.setItem("username", username);
+        localStorage.setItem("user_id", user_id);
+
 
         // Trigger the parent component's login function
         onLogin();

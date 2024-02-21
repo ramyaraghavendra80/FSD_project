@@ -11,10 +11,14 @@
 }
 .moviecontainer {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   align-content: stretch;
   /* overflow: scroll; */
 }
 .movie-card:hover {
   box-shadow: 3px 2px 7px rgb(228, 123, 123); /* Apply a box shadow when hovering */
+}
+.movieimage {
+  width: 225px;
+  height: 130px;
 }

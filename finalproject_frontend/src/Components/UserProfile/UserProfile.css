@@ -1,20 +1,23 @@
 .user-profile {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
     text-align: center;
-  }
-  
-  .avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 20px;
+    width: 400px;
+    height: 200px;
+    margin: 30px 0px 0px 0px;
+    padding: 10px 10px 10px 10px;
+    /* box-shadow: -1px 1px 5px black, 2px 2px 2px 2px gray; */
+    /* background-image: url(C:\Users\ramya\Final_Project\finalproject_frontend\src\Components\Images\images17.jpg); */
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      border-radius: 8px;
+      /* padding: 20px; */
+      box-shadow: -1px 1px 5px rgb(25, 3, 107), 2px 2px 333px 0px rgb(8, 1, 119);
+      color: #e2099a;
+    margin-left: 25em;
   }
   
   h2 {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
   
   .labelname{
@@ -25,17 +28,19 @@
   
   
   .inputname{
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    width: 80%;
+  border-radius: 8px;
+  border: none;
+  box-shadow: -1px 1px 5px #878080, 2px 2px 2px 2px #cfc8c8;
+  margin: 10px 10px 10px 10px;
+  padding: 3px 3px 3px 5px;
   }
-  
+  .edit{
+    margin: 0px;
+  }
   .buttonname {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 5px;
+    font-size: 12px;
     margin-right: 10px;
     cursor: pointer;
     background-color: #007bff;
@@ -43,6 +48,8 @@
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    width: 100px;
+    height: 40px;
   }
   
   button:hover {

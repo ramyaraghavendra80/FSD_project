@@ -46,9 +46,10 @@ class Theater(models.Model):
 class Movie(models.Model):
     title = models.CharField(max_length=255)
     genre = models.CharField(max_length=100)
+    location = models.CharField(max_length=100, null=True)
     language = models.CharField(max_length=50)
     rating = models.CharField(max_length=10)
-    image = models.TextField()
+    image = models.URLField()
     director = models.CharField(max_length=255)
     movie_length = models.PositiveIntegerField()
     year = models.DateField(default=datetime.date.today)
